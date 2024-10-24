@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Contact</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .search-container {
+            background-color: #ffffff;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+        .form-control {
+            border-radius: 50px;
+            padding: 0.75rem;
+        }
+        .btn-primary {
+            border-radius: 50px;
+            padding: 0.75rem;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="search-container">
+        <h1>Search Contact</h1>
+        <form action="/search_contact" method="POST">
+            <div class="form-group">
+                <label for="registration_number">Registration Number</label>
+                <input type="text" class="form-control" id="registration_number" name="registration_number" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Search</button>
+        </form>
+    </div>
+</body>
+</html>

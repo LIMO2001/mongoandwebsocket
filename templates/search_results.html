@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .results-container {
+            background-color: #ffffff;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            width: 100%;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+        .contact-detail {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+        .btn-back {
+            display: block;
+            margin: 1.5rem auto 0;
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="results-container">
+        <h1>Contact Details</h1>
+        {% if contact %}
+            <p class="contact-detail">Name: {{ contact.name }}</p>
+            <p class="contact-detail">Mobile: {{ contact.mobile }}</p>
+            <p class="contact-detail">Email: {{ contact.email }}</p>
+            <p class="contact-detail">Address: {{ contact.address }}</p>
+            <p class="contact-detail">Registration Number: {{ contact.registration_number }}</p>
+        {% else %}
+            <p class="text-danger text-center">No contact found.</p>
+        {% endif %}
+        <a href="{{ url_for('search_contact') }}" class="btn btn-primary btn-back">Back to Search</a>
+    </div>
+</body>
+</html>
